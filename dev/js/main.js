@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 /* TODO: WORKING EXAMPLE OF CURRENT PAGE */
-    const url = 'http://api.football-data.org/v1/competitions/?season=2015';
+    const url = 'https://api.football-data.org/v1/competitions/?season=2015';
     const headers = {"X-Auth-Token": "71d6556f803d4391bf1bede6e10cf5d8"};
     console.log("competitions:");
     fetch(url, {"headers": headers})
