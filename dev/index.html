@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test Api</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+    <script>
+        function myFunction() {
+            const x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<!--
+     Navigation Bar
+    <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+    </ul>
+     Navigation Bar
+<h1>Authors</h1>
+<ul id="authors"></ul>
+<div id="NFLAPIBlock"></div>
+-->
+
+    <!-- UL Variant
+        <ul class="topnav" id="myTopnav">
+        <li><a href="index.html" class="active">Competition</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="league_table.html">LeagueTable</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a></li>
+        </ul>
+    -->
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Competition</a>
+        <a href="team.html">Team</a>
+        <a href="league_table.html">LeagueTable</a>
+        <a href="about.html">About</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2>Responsive Topnav Example</h2>
+        <p>Resize the browser window to see how it works.</p>
+    </div>
+    <!--<img src="img/test1.jpg" style="max-width:100%; height: auto;">-->
+
+
+<!-- TEMPLATE EXAMPLE -->
+    <table id="competition_table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>League</th>
+            <th>Number of Games</th>
+            <th>Number of match days</th>
+            <th>Number of Teams</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- existing data could optionally be included here -->
+        </tbody>
+    </table>
+
+    <template id="competition_row">
+        <tr>
+            <td class="record"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
+
+    <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+        © copyright
+    </div>
+    <!--#footer-->
+</body>
+</html>
