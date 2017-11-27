@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 if(list.hasOwnProperty(searchField.value)) {
                     console.log(list[searchField.value]);
                     console.log("leagueTable:");
-                    const url = "http://api.football-data.org/v1/competitions/" + list[searchField.value] + "/leagueTable";
+                    const url = "https://api.football-data.org/v1/competitions/" + list[searchField.value] + "/leagueTable";
                     const headers = {"X-Auth-Token": "71d6556f803d4391bf1bede6e10cf5d8"};
                     fetch(url, {"headers": headers})
                         .then((resp) => resp.json())
