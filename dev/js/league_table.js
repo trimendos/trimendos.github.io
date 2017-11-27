@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function(){
             tb[i].innerHTML = "";
         }
     }
+
+    function replaceProtocol(url){
+        return url.replace("http:", "https:")
+    }
     
     function fillTable(data) {
         console.log("fillTable[data]", data);
@@ -52,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function(){
             captionTb[0].appendChild(clone);
 
             data.standing.forEach((el) => {
-                td[0].firstChild.setAttribute("src", el.crestURI !== null ? el.crestURI : "./img/default-icon.svg");
+                td[0].firstChild.setAttribute("src",
+                    el.crestURI !== null ? replaceProtocol(el.crestURI) : "./img/default-icon.svg");
                 td[1].textContent = el.teamName;
                 td[2].textContent = el.position;
                 td[3].textContent = el.points;
