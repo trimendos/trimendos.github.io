@@ -4,70 +4,45 @@
 
 html {
     font-family: 'Muli', sans-serif;
-    background: #EAEAEA;
+    /*background: #EAEAEA;*/
     color: #333;
-    font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+    /*height: 100%;*/
+    /*text-rendering: optimizeLegibility;*/
+    font-size: 0.8rem;
 }
 
 body {
-    padding: 0 1em;
+    /*line-height: 1.5rem;*/
+    /*padding: 1.5rem 0;*/
+    /*margin: 0 auto;*/
+    /*background-image: linear-gradient(rgba(200, 50, 50, 0.25) 1px, transparent 1px);*/
+    background-size: 1px 1.5rem;
+    /*width: 22rem;*/
+}
+
+table {
+    /*border-collapse: collapse;*/
+    /*border-spacing: 0px;*/
+    /*border: 1px solid #666;*/
 }
 
 pre {
     font-size: 12px;
-    padding: 10px;
+    /*padding: 10px;*/
     background: white;
     border: solid 1px #777;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0px;
-    border: 1px solid #666;
-}
-
 td, th {
-    padding: 0.25rem .5rem;
+    /*padding: 0.25rem .5rem;*/
     border: 1px solid #666;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    box-sizing: border-box;
-    height: 100%;
-    font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
-html {
-    font-size: 0.8rem;
-}
-@media screen and (min-width: 20rem) {
-    html {
-        font-size: calc(0.8rem + 1.2 * ((100vw - 20rem) / 30));
-    }
-}
-@media screen and (min-width: 50rem) {
-    html {
-        font-size: 2rem;
-    }
-}
-
-body {
-    line-height: 1.5rem;
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    background-image: linear-gradient(rgba(200, 50, 50, 0.25) 1px, transparent 1px);
-    background-size: 1px 1.5rem;
-    width: 22rem;
 }
 
 p {
+    text-indent: 2rem;
     line-height: 1.5rem;
-    margin-bottom: 1.5rem;
+    /*margin-bottom: 1.5rem;*/
 }
 
 h1,
@@ -82,29 +57,40 @@ h5 {
 h1 {
     font-size: 2rem;
     line-height: 2rem;
-    margin-top: calc((1.5rem - 2rem) + 1.5rem);
+    /*margin-top: calc((1.5rem - 2rem) + 1.5rem);*/
 }
 
 h2 {
     font-size: 1.5rem;
     line-height: 1.5rem;
-    margin-top: calc((1.5rem - 1.5rem) + 1.5rem*2);
+    /*margin-top: calc((1.5rem - 1.5rem) + 1.5rem*2);*/
 }
 
 h3 {
     font-size: 1.25rem;
     line-height: 1.25rem;
-    margin-top: calc((1.5rem - 1.25rem) + 1.5rem*2);
+    /*margin-top: calc((1.5rem - 1.25rem) + 1.5rem*2);*/
 }
 
 h4 {
     font-size: 1rem;
     line-height: 1rem;
-    margin-top: calc((1.5rem - 1rem) + 1.5rem*2);
+    /*margin-top: calc((1.5rem - 1rem) + 1.5rem*2);*/
 }
 
 h5 {
     font-size: 0.875rem;
     line-height: 0.875rem;
     margin-top: calc((1.5rem - 0.875rem) + 1.5rem*2);
+}
+
+@media screen and (min-width: 20rem) {
+    html {
+        font-size: calc(0.8rem + 1.2 * ((100vw - 20rem) / 30));
+    }
+}
+@media screen and (min-width: 50rem) {
+    html {
+        font-size: 2rem;
+    }
 }
