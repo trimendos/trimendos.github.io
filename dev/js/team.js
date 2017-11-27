@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    function clearTable() {
-        const tb = document.getElementsByTagName("tbody");
-        console.log("tb:", tb, typeof tb);
-        for(let i=0; i < tb.length; i++) {
-            tb[i].innerHTML = "";
-        }
+    function hideAnimation() {
+        const loadingAnimation = document.querySelector(".animation"),
+            table = document.querySelector("table");
+        loadingAnimation.style.display = "none";
+        table.style.display = "table";
     }
 
     function replaceProtocol(url){
@@ -96,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     });
                     console.log("teamsNameList", teamsNameList);
                     makeAutoComplete(teamsNameList);
+                    hideAnimation();
                     fillTable(teams);
                 })
                 .catch(error => console.log("error", error));
