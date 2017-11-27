@@ -8,6 +8,7 @@ h1, h2, h3, table#competition_row{
 }
 p {
     font-size: 3vw;
+    text-indent: 5vw;
 }
 /* text responsive */
 
