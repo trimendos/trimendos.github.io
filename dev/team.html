@@ -2,9 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teams</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/team.css">
+    <script src="./js/team.js"></script>
+
+    <script>
+        function myFunction() {
+            const x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </head>
 <body>
 
+<div class="topnav" id="myTopnav">
+    <a href="index.html">Competition</a>
+    <a href="team.html" class="active">Teams</a>
+    <a href="league_table.html">LeagueTable</a>
+    <a href="about.html">About</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<div style="padding-left:16px">
+    <h3 align="center" id="page_title"></h3>
+    <p></p>
+</div>
+
+<form class="w3-container" id="search-form">
+    <p><label>Type name of team to find it in the table:</label><br>
+        <br>
+        <input class="search-field" type="text" list="search_field" tabindex="1">
+    <p>
+</form>
+
+
+<datalist id="search_field" style="width: 100%">
+</datalist>
+
+
+<div style="overflow-x:auto;">
+    <table id="table_teams">
+        <thead>
+        <tr>
+            <th>Icon</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Short name</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<template id="teams_row">
+    <tr>
+        <td><img width="100" height="100"><a></a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+
+
+<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+    © copyright
+</div>
+<!--#footer-->
 </body>
 </html>

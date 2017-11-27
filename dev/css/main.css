@@ -3,54 +3,14 @@ body {
 }
 
 /* text responsive */
-h1, h2, p {
+h1, h2, h3, table#competition_row{
     font-size: 5vw;
+}
+p {
+    font-size: 3vw;
 }
 /* text responsive */
 
-/*  Navigation Bar */
-/*ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-li {
-    float: left;
-}
-li:last-child {
-    float: right;
-}
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li:hover {
-    background-color: #111;
-}
-li:active {
-    background-color: #4CAF50;
-}*/
-/* Navigation Bar */
-
-/*ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    !*background-color: #333;*!
-}
-li {
-    float: left;
-}
-li:last-child {
-    float: right;
-}*/
 .topnav {
     overflow: hidden;
     background-color: #333;
@@ -103,5 +63,8 @@ li:last-child {
         display: block;
         text-align: left;
     }
-
+    .active {
+        background-color: #4CAF50;
+        color: white;
+    }
 }
