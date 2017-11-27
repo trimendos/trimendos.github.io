@@ -30,50 +30,50 @@
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
 
+    <div class="content">
+        <div style="padding-left:16px">
+            <h3 align="center" id="page_title">Football Competitions </h3>
+            <p>The table shows a list of all available competitions in the current season.</p>
+        </div>
 
-    <div style="padding-left:16px">
-        <h3 align="center" id="page_title">Football Competitions </h3>
-        <p>The table shows a list of all available competitions in the current season.</p>
-    </div>
 
+    <!-- TEMPLATE EXAMPLE -->
+        <div class="animation">
+            <img src="./img/loadingAnimation.gif">
+        </div>
 
-<!-- TEMPLATE EXAMPLE -->
-    <div class="animation">
-        <img src="./img/loadingAnimation.gif">
-    </div>
-
-    <div style="overflow-x:auto;">
-        <table id="competition_table">
-            <thead>
+        <div style="overflow-x:auto;">
+            <table id="competition_table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>League</th>
+                    <th>Number of Games</th>
+                    <th>Number of match days</th>
+                    <th>Number of Teams</th>
+                    <th>Year</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- existing data could optionally be included here -->
+                </tbody>
+            </table>
+        </div>
+        <template id="competition_row">
             <tr>
-                <th>Title</th>
-                <th>League</th>
-                <th>Number of Games</th>
-                <th>Number of match days</th>
-                <th>Number of Teams</th>
-                <th>Year</th>
+                <td class="record"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
-            </thead>
-            <tbody>
-            <!-- existing data could optionally be included here -->
-            </tbody>
-        </table>
+        </template>
     </div>
-    <template id="competition_row">
-        <tr>
-            <td class="record"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </template>
 
-<!--style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;"-->
-    <div class="footer">
+    <footer class="footer">
         © copyright
-    </div>
+    </footer>
     <!--#footer-->
 </body>
 </html>
