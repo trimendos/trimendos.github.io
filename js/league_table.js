@@ -27,13 +27,11 @@ document.addEventListener("DOMContentLoaded", function(){
             option.text = leagueNamesList[i];
             dataList.appendChild(option);
         }
-        console.log(leagueObj);
         return leagueObj;
     }
 
     function clearTable() {
         const tb = document.getElementsByTagName("tbody");
-        console.log("tb:", tb, typeof tb);
         for(let i=0; i < tb.length; i++) {
             tb[i].innerHTML = "";
         }
@@ -51,67 +49,53 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
     function fillTable(data) {
-        console.log("fillTable[data]", data);
-        console.log("fillTable type[data]", typeof data);
+        const t = document.querySelector("#league_row"),
+            td = t.content.querySelectorAll("td"),
+            caption = document.getElementById("caption_row"),
+            captionTds = caption.content.querySelectorAll("td");
+        captionTds[0].textContent = data.leagueCaption;
+        captionTds[1].textContent = data.matchday;
+        const captionTb = document.getElementsByTagName("tbody");
+        const clone = document.importNode(caption.content, true);
+        captionTb[0].appendChild(clone);
 
-        if ('content' in document.createElement('template')) {
-
-            const t = document.querySelector("#league_row"),
-                td = t.content.querySelectorAll("td"),
-                caption = document.getElementById("caption_row"),
-                captionTds = caption.content.querySelectorAll("td");
-            captionTds[0].textContent = data.leagueCaption;
-            captionTds[1].textContent = data.matchday;
-            const captionTb = document.getElementsByTagName("tbody");
-            const clone = document.importNode(caption.content, true);
-            captionTb[0].appendChild(clone);
-
-            data.standing.forEach((el) => {
-                td[0].firstChild.setAttribute("src",
-                    el.crestURI !== null ? replaceProtocol(el.crestURI) : "./img/default-icon.svg");
-                td[1].textContent = el.teamName;
-                td[2].textContent = el.position;
-                td[3].textContent = el.points;
-                td[4].textContent = el.playedGames;
-                td[5].textContent = el.wins;
-                td[6].textContent = el.losses;
-                td[7].textContent = el.draws;
-                td[8].textContent = el.goals;
-                td[9].textContent = el.goalsAgainst;
-                td[10].textContent = el.goalDifference;
-                const tb = document.getElementsByTagName("tbody");
-                const clone = document.importNode(t.content, true);
-                tb[1].appendChild(clone);
-            });
-
-        } else {
-
-        }
+        data.standing.forEach((el) => {
+            td[0].firstChild.setAttribute("src",
+                el.crestURI !== null ? replaceProtocol(el.crestURI) : "./img/default-icon.svg");
+            td[1].textContent = el.teamName;
+            td[2].textContent = el.position;
+            td[3].textContent = el.points;
+            td[4].textContent = el.playedGames;
+            td[5].textContent = el.wins;
+            td[6].textContent = el.losses;
+            td[7].textContent = el.draws;
+            td[8].textContent = el.goals;
+            td[9].textContent = el.goalsAgainst;
+            td[10].textContent = el.goalDifference;
+            const tb = document.getElementsByTagName("tbody");
+            const clone = document.importNode(t.content, true);
+            tb[1].appendChild(clone);
+        });
     }
 
 
     const url = "https://api.football-data.org/v1/competitions/?season=2017";
     const headers = {"X-Auth-Token": "71d6556f803d4391bf1bede6e10cf5d8"};
-    console.log("competitions:");
     fetch(url, {"headers": headers})
         .then((resp) =>
             resp.json()
         )
         .then(data => {
-                console.log("data", data);
                 const list = makeAutoComplete(data);
             const searchField = document.querySelector(".search-field");
 
             searchField.addEventListener("input", () => {
                 if(list.hasOwnProperty(searchField.value)) {
-                    console.log(list[searchField.value]);
-                    console.log("leagueTable:");
                     const url = "https://api.football-data.org/v1/competitions/" + list[searchField.value] + "/leagueTable";
                     const headers = {"X-Auth-Token": "71d6556f803d4391bf1bede6e10cf5d8"};
                     fetch(url, {"headers": headers})
                         .then((resp) => resp.json())
                         .then(data => {
-                            console.log("data", data);
                             clearTable();
                             showTables();
                             fillTable(data);

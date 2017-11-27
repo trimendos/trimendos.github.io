@@ -5,26 +5,20 @@ document.addEventListener("DOMContentLoaded", function(){
     page_title.innerText = page_title.innerText + " " + season;
 
     function fillTable(data) {
-        if ('content' in document.createElement('template')) {
+        const t = document.querySelector('#competition_row'),
+            td = t.content.querySelectorAll("td");
 
-            const t = document.querySelector('#competition_row'),
-                td = t.content.querySelectorAll("td");
-
-            data.forEach((el) => {
-                td[0].textContent = el.caption;
-                td[1].textContent = el.league;
-                td[2].textContent = el.numberOfGames;
-                td[3].textContent = el.numberOfMatchdays;
-                td[4].textContent = el.numberOfTeams;
-                td[5].textContent = el.year;
-                const tb = document.getElementsByTagName("tbody");
-                const clone = document.importNode(t.content, true);
-                tb[0].appendChild(clone);
-            });
-
-        } else {
-
-        }
+        data.forEach((el) => {
+            td[0].textContent = el.caption;
+            td[1].textContent = el.league;
+            td[2].textContent = el.numberOfGames;
+            td[3].textContent = el.numberOfMatchdays;
+            td[4].textContent = el.numberOfTeams;
+            td[5].textContent = el.year;
+            const tb = document.getElementsByTagName("tbody");
+            const clone = document.importNode(t.content, true);
+            tb[0].appendChild(clone);
+        });
     }
 
     function hideAnimation() {
