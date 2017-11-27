@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", function(){
     page_title.innerText = page_title.innerText + " " + season;
 
     function fillTable(data) {
-        console.log("fillTable[data]", data);
-        console.log("fillTable type[data]", typeof data);
         if ('content' in document.createElement('template')) {
 
             const t = document.querySelector('#competition_row'),
@@ -29,15 +27,21 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
+    function hideAnimation() {
+        const loadingAnimation = document.querySelector(".animation"),
+            table = document.querySelector("table");
+        loadingAnimation.style.display = "none";
+        table.style.display = "table";
+    }
+
     const url = "https://api.football-data.org/v1/competitions/?season=" + season;
     const headers = {"X-Auth-Token": "71d6556f803d4391bf1bede6e10cf5d8"};
-    console.log("competitions:");
     fetch(url, {"headers": headers})
         .then((resp) =>
             resp.json()
         )
         .then(data => {
-                console.log("data", data);
+                hideAnimation();
                 fillTable(data);
             }
         )
