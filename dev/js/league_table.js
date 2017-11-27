@@ -38,6 +38,13 @@ document.addEventListener("DOMContentLoaded", function(){
     function replaceProtocol(url){
         return url.replace("http:", "https:")
     }
+
+    function showTables() {
+        const table = document.querySelectorAll("table");
+        for(let i=0; i < table.length; i++) {
+            table[i].style.display = "table";
+        }
+    }
     
     function fillTable(data) {
         console.log("fillTable[data]", data);
@@ -102,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         .then(data => {
                             console.log("data", data);
                             clearTable();
+                            showTables();
                             fillTable(data);
                         })
                         .catch(error => console.log("error", error));

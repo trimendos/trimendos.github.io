@@ -35,78 +35,78 @@
         <h3 align="center" id="page_title"></h3>
         <p></p>
     </div>
+    <div class="content">
+        <form class="w3-container">
+            <p>
+                <label>Search by League Name:</label><br>
+                <br>
+                <input class="search-field" type="text" list="search_field" tabindex="1">
+            <p>
+        </form>
 
-    <form class="w3-container">
-        <p>
-            <label>Search by League Name:</label><br>
+        <datalist id="search_field" style="width: 100%">
+        </datalist>
+
+        <div style="overflow-x:auto;">
+            <table id="table_caption">
+                <thead>
+                <tr>
+                    <th>League Caption</th>
+                    <th>matchday</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
             <br>
-            <input class="search-field" type="text" list="search_field" tabindex="1">
-        <p>
-    </form>
 
-    <datalist id="search_field" style="width: 100%">
-    </datalist>
+            <table id="table_league">
+                <thead>
+                <tr>
+                    <th>Icon</th>
+                    <th>Team Name</th>
+                    <th>Position</th>
+                    <th>Points</th>
+                    <th>Played Games</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Draws</th>
+                    <th>Goals</th>
+                    <th>Goals Against</th>
+                    <th>Goals Difference</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
-    <div style="overflow-x:auto;">
-        <table id="table_caption">
-            <thead>
+        <template id="caption_row">
             <tr>
-                <th>League Caption</th>
-                <th>matchday</th>
+                <td class="record"></td>
+                <td></td>
             </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <br>
+        </template>
 
-        <table id="table_league">
-            <thead>
+        <template id="league_row">
             <tr>
-                <th>Icon</th>
-                <th>Team Name</th>
-                <th>Position</th>
-                <th>Points</th>
-                <th>Played Games</th>
-                <th>Wins</th>
-                <th>Losses</th>
-                <th>Draws</th>
-                <th>Goals</th>
-                <th>Goals Against</th>
-                <th>Goals Difference</th>
+                <td><img width="100" height="100"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        </template>
     </div>
-
-    <template id="caption_row">
-        <tr>
-            <td class="record"></td>
-            <td></td>
-        </tr>
-    </template>
-
-    <template id="league_row">
-        <tr>
-            <td><img width="100" height="100"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </template>
-
-    <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+    <footer class="footer">
         © copyright
-    </div>
+    </footer>
     <!--#footer-->
 </body>
 </html>
