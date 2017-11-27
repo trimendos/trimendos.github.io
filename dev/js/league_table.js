@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
     "use strict";
+    const form = document.querySelector("#search-form");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    }, false);
 
     const options = document.getElementsByTagName("option");
 
